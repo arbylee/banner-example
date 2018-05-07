@@ -57,6 +57,7 @@ h1 {
 }
 
 .text-overlay {
+  text-decoration: none;
   color: white;
   position: absolute;
   top: 240px;
