@@ -1,12 +1,15 @@
 .container {
+  position: absolute;
+  left: -560px;
   display: flex;
+  width: 2560px;
+  height: 720px;
 }
 
 .left-image-container {
   overflow: hidden;
   transform: skew(-55deg);
   width: 100%;
-  height: 100%;
   transition: width 0.4s ease-in-out;
 }
 
@@ -18,7 +21,6 @@
   overflow: hidden;
   transform: skew(-55deg);
   width: 100%;
-  height: 100%;
   transition: width 0.4s ease-in-out;
 }
 
@@ -28,12 +30,14 @@
 
 .left-image {
   position: absolute;
+  width: 1280px;
   transform: skew(55deg);
-  left: 100px;
+  left: 600px;
 }
 
 .right-image {
   position: absolute;
+  width: 1280px;
   transform: skew(55deg);
-  right: 100px;
+  right: 680px;
 }
