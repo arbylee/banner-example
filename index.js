@@ -27,9 +27,11 @@
       $containerElement.addClass('full-width');
       currentState = FULL_WIDTH;
     };
-    const fullWidthToDefault = ($containerElement) => {
-      $containerElement.removeClass("full-width")
-      currentState = DEFAULT;
+    const fullWidthToDefault = ($containerElement, e) => {
+      if ($(e.target).hasClass('close-control')) {
+        $containerElement.removeClass("full-width")
+        currentState = DEFAULT;
+      }
     };
 
     const stateTransitions = {
@@ -46,17 +48,17 @@
       }
     };
 
-    const setupHandler = (element, action) => {
+    const setupHandler = (element, action, e) => {
       const handler = stateTransitions[currentState] && stateTransitions[currentState][action];
       if (!handler) {
         return;
       }
 
-      handler($(element));
+      handler($(element), e);
     };
 
     return {
-      containerSelector: '.image-container',
+      mainSelector: '.image-container',
       setupHandler
     }
   }
@@ -64,16 +66,16 @@
   const init = () => {
     const bannerImage = BannerImage();
 
-    $(bannerImage.containerSelector).mouseenter(function(e) {
-      bannerImage.setupHandler(this, HOVER);
+    $(bannerImage.mainSelector).mouseenter(function(e) {
+      bannerImage.setupHandler(this, HOVER, e);
     });
 
-    $(bannerImage.containerSelector).mouseleave(function(e) {
-      bannerImage.setupHandler(this, UNHOVER);
+    $(bannerImage.mainSelector).mouseleave(function(e) {
+      bannerImage.setupHandler(this, UNHOVER, e);
     });
 
-    $(bannerImage.containerSelector).click(function(e) {
-      bannerImage.setupHandler(this, CLICK);
+    $(bannerImage.mainSelector).click(function(e) {
+      bannerImage.setupHandler(this, CLICK, e);
     });
   }
 
