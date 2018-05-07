@@ -70,25 +70,31 @@
 }
 
 .close-control {
+  font-size: 1.2em;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: none;
+  color: white;
+  cursor: pointer;
   position: absolute;
   transform: skew(55deg);
-  opacity: 0;
 }
 
 .close-control.-left {
   left: 1324px;
-  top: 0;
+  top: 10px;
 }
 
 .close-control.-right {
   right: 1220px;
-  top: 0;
+  top: 10px;
 }
 
 .full-width .close-control.-left {
-  opacity: 1;
+  display: block;
 }
 
 .full-width .close-control.-right {
-  opacity: 1;
+  display: block;
 }
