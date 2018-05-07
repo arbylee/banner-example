@@ -25,6 +25,10 @@
   width: 200%;
 }
 
+.image-container.full-width {
+  width: 1200%;
+}
+
 .left-image {
   position: absolute;
   width: 1280px;
@@ -52,7 +56,7 @@
 }
 
 .text-overlay.-right {
-  left: 960px;
+  right: 860px;
 }
 
 .text-overlay.-left.visible {
@@ -62,5 +66,5 @@
 
 .text-overlay.-right.visible {
   opacity: 1;
-  left: 860px;
+  right: 960px;
 }
