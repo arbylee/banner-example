@@ -42,17 +42,17 @@ h1 {
   width: 5200%;
 }
 
-.left-image {
+.image {
   position: absolute;
   width: 1280px;
   transform: skew(55deg);
+}
+
+.image.-left {
   left: 560px;
 }
 
-.right-image {
-  position: absolute;
-  width: 1280px;
-  transform: skew(55deg);
+.image.-right {
   right: 720px;
 }
 
