@@ -10,24 +10,24 @@
 
     let currentState = DEFAULT;
 
-    const defaultToExpanded = ($containerElement, $textElement) => {
+    const defaultToExpanded = ($containerElement, $children) => {
       $containerElement.addClass("grow");
-      $textElement.addClass('visible');
+      $children.addClass('visible');
       currentState = EXPANDED;
     }
-    const expandedToDefault = ($containerElement, $textElement) => {
+    const expandedToDefault = ($containerElement, $children) => {
       $containerElement.removeClass("grow");
-      $textElement.removeClass('visible');
+      $children.removeClass('visible');
       currentState = DEFAULT;
     }
-    const expandedToFullWidth = ($containerElement, $textElement) => {
+    const expandedToFullWidth = ($containerElement, $children) => {
       $containerElement.removeClass("grow");
       $containerElement.addClass('full-width');
       currentState = FULL_WIDTH;
     }
-    const fullWidthToDefault = ($containerElement, $textElement) => {
+    const fullWidthToDefault = ($containerElement, $children) => {
       $containerElement.removeClass("full-width")
-      $textElement.removeClass('visible');
+      $children.removeClass('visible');
       currentState = DEFAULT;
     }
 
@@ -49,8 +49,11 @@
       return handler;
     };
 
-    const getTextSelector = (side) => {
-      return `.text-overlay[data-side="${side}"]`;
+    const getChildrenSelector = (side) => {
+      return [
+        `.text-overlay[data-side="${side}"]`,
+        `.close-control[data-side="${side}"]`
+    ].join(',');
     };
 
     const getCurrentState = () => {
@@ -60,7 +63,7 @@
     return {
       getStateHandler,
       containerSelector: '.image-container',
-      getTextSelector,
+      getChildrenSelector,
       getCurrentState
     }
   }
@@ -75,7 +78,7 @@
       }
 
       const side = $(this).data('side');
-      const $textOverlay = $(this).children(bannerImage.getTextSelector(side));
+      const $textOverlay = $(this).children(bannerImage.getChildrenSelector(side));
       handler($(this), $textOverlay);
     });
 
@@ -86,7 +89,7 @@
       }
 
       const side = $(this).data('side');
-      const $textOverlay = $(this).children(bannerImage.getTextSelector(side));
+      const $textOverlay = $(this).children(bannerImage.getChildrenSelector(side));
       handler($(this), $textOverlay);
     });
 
@@ -97,7 +100,7 @@
       }
 
       const side = $(this).data('side');
-      const $textOverlay = $(this).children(bannerImage.getTextSelector(side));
+      const $textOverlay = $(this).children(bannerImage.getChildrenSelector(side));
       handler($(this), $textOverlay);
     });
   }
