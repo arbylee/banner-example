@@ -10,20 +10,20 @@
 
     let currentState = DEFAULT;
 
-    const defaultToExpanded = ($containerElement, $children) => {
+    const defaultToExpanded = ($containerElement) => {
       $containerElement.addClass("grow");
       currentState = EXPANDED;
     }
-    const expandedToDefault = ($containerElement, $children) => {
+    const expandedToDefault = ($containerElement) => {
       $containerElement.removeClass("grow");
       currentState = DEFAULT;
     }
-    const expandedToFullWidth = ($containerElement, $children) => {
+    const expandedToFullWidth = ($containerElement) => {
       $containerElement.removeClass("grow");
       $containerElement.addClass('full-width');
       currentState = FULL_WIDTH;
     }
-    const fullWidthToDefault = ($containerElement, $children) => {
+    const fullWidthToDefault = ($containerElement) => {
       $containerElement.removeClass("full-width")
       currentState = DEFAULT;
     }
@@ -46,13 +46,6 @@
       return handler;
     };
 
-    const getChildrenSelector = (side) => {
-      return [
-        `.text-overlay[data-side="${side}"]`,
-        `.close-control[data-side="${side}"]`
-    ].join(',');
-    };
-
     const getCurrentState = () => {
       return currentState;
     };
@@ -60,7 +53,6 @@
     return {
       getStateHandler,
       containerSelector: '.image-container',
-      getChildrenSelector,
       getCurrentState
     }
   }
@@ -74,9 +66,7 @@
         return;
       }
 
-      const side = $(this).data('side');
-      const $textOverlay = $(this).children(bannerImage.getChildrenSelector(side));
-      handler($(this), $textOverlay);
+      handler($(this));
     });
 
     $(bannerImage.containerSelector).mouseleave(function(e) {
@@ -85,9 +75,7 @@
         return;
       }
 
-      const side = $(this).data('side');
-      const $textOverlay = $(this).children(bannerImage.getChildrenSelector(side));
-      handler($(this), $textOverlay);
+      handler($(this));
     });
 
     $(bannerImage.containerSelector).click(function(e) {
@@ -96,9 +84,7 @@
         return;
       }
 
-      const side = $(this).data('side');
-      const $textOverlay = $(this).children(bannerImage.getChildrenSelector(side));
-      handler($(this), $textOverlay);
+      handler($(this));
     });
   }
 
