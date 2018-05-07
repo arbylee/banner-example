@@ -4,9 +4,26 @@
 
 .left-image-container {
   overflow: hidden;
+  transform: skew(-55deg);
+  width: 100%;
+  height: 100%;
 }
 
 .right-image-container {
   overflow: hidden;
+  transform: skew(-55deg);
+  width: 100%;
+  height: 100%;
 }
 
+.left-image {
+  position: absolute;
+  transform: skew(55deg);
+  left: 100px;
+}
+
+.right-image {
+  position: absolute;
+  transform: skew(55deg);
+  right: 100px;
+}
