@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h1 {
+  padding: 0.25em 0;
+}
+
 .container {
   width: 1280px;
   height: 720px;
@@ -44,29 +57,30 @@
 }
 
 .text-overlay {
+  color: white;
   position: absolute;
-  top: 360px;
+  top: 240px;
   opacity: 0;
   transition: opacity 0.4s ease-in-out, left 0.4s ease-in-out, right 0.4s ease-in-out;
   transform: skew(55deg);
 }
 
 .text-overlay.-left {
-  left: 580px;
+  left: 400px;
 }
 
 .text-overlay.-right {
-  right: 860px;
+  right: 800px;
 }
 
 .full-width .text-overlay.-left, .grow .text-overlay.-left {
   opacity: 1;
-  left: 680px;
+  left: 500px;
 }
 
 .full-width .text-overlay.-right, .grow .text-overlay.-right {
   opacity: 1;
-  right: 960px;
+  right: 900px;
 }
 
 .close-control {
