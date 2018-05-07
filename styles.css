@@ -6,7 +6,7 @@
   height: 720px;
 }
 
-.left-image-container {
+.image-container {
   position: relative;
   overflow: hidden;
   transform: skew(-55deg);
@@ -14,16 +14,8 @@
   transition: width 0.4s ease-in-out;
 }
 
-.grow {
-  width: 200% !important;
-}
-
-.right-image-container {
-  position: relative;
-  overflow: hidden;
-  transform: skew(-55deg);
-  width: 100%;
-  transition: width 0.4s ease-in-out;
+.image-container.grow {
+  width: 200%;
 }
 
 .left-image {
