@@ -1,4 +1,11 @@
 .container {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner {
   position: absolute;
   left: -560px;
   display: flex;
@@ -22,12 +29,12 @@
   position: absolute;
   width: 1280px;
   transform: skew(55deg);
-  left: 600px;
+  left: 560px;
 }
 
 .right-image {
   position: absolute;
   width: 1280px;
   transform: skew(55deg);
-  right: 680px;
+  right: 720px;
 }
