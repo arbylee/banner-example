@@ -59,12 +59,12 @@
   right: 860px;
 }
 
-.text-overlay.-left.visible {
+.grow .text-overlay.-left {
   opacity: 1;
   left: 680px;
 }
 
-.text-overlay.-right.visible {
+.grow .text-overlay.-right {
   opacity: 1;
   right: 960px;
 }

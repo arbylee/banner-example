@@ -12,12 +12,10 @@
 
     const defaultToExpanded = ($containerElement, $children) => {
       $containerElement.addClass("grow");
-      $children.addClass('visible');
       currentState = EXPANDED;
     }
     const expandedToDefault = ($containerElement, $children) => {
       $containerElement.removeClass("grow");
-      $children.removeClass('visible');
       currentState = DEFAULT;
     }
     const expandedToFullWidth = ($containerElement, $children) => {
@@ -27,7 +25,6 @@
     }
     const fullWidthToDefault = ($containerElement, $children) => {
       $containerElement.removeClass("full-width")
-      $children.removeClass('visible');
       currentState = DEFAULT;
     }
 
