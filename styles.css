@@ -7,25 +7,23 @@
 }
 
 .left-image-container {
+  position: relative;
   overflow: hidden;
   transform: skew(-55deg);
   width: 100%;
   transition: width 0.4s ease-in-out;
 }
 
-.left-image-container:hover {
-  width: 200%;
+.grow {
+  width: 200% !important;
 }
 
 .right-image-container {
+  position: relative;
   overflow: hidden;
   transform: skew(-55deg);
   width: 100%;
   transition: width 0.4s ease-in-out;
-}
-
-.right-image-container:hover {
-  width: 200%;
 }
 
 .left-image {
