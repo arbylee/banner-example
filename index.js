@@ -13,24 +13,29 @@
     const defaultToExpanded = ($containerElement) => {
       $containerElement.addClass("grow");
       currentState = EXPANDED;
-    }
+    };
+    const defaultToFullWidth = ($containerElement) => {
+      $containerElement.addClass("full-width");
+      currentState = FULL_WIDTH;
+    };
     const expandedToDefault = ($containerElement) => {
       $containerElement.removeClass("grow");
       currentState = DEFAULT;
-    }
+    };
     const expandedToFullWidth = ($containerElement) => {
       $containerElement.removeClass("grow");
       $containerElement.addClass('full-width');
       currentState = FULL_WIDTH;
-    }
+    };
     const fullWidthToDefault = ($containerElement) => {
       $containerElement.removeClass("full-width")
       currentState = DEFAULT;
-    }
+    };
 
     const stateTransitions = {
       [DEFAULT]: {
         [HOVER]: defaultToExpanded,
+        [CLICK]: defaultToFullWidth,
       },
       [EXPANDED]: {
         [UNHOVER]: expandedToDefault,
