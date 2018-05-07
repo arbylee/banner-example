@@ -59,12 +59,36 @@
   right: 860px;
 }
 
-.grow .text-overlay.-left {
+.full-width .text-overlay.-left, .grow .text-overlay.-left {
   opacity: 1;
   left: 680px;
 }
 
-.grow .text-overlay.-right {
+.full-width .text-overlay.-right, .grow .text-overlay.-right {
   opacity: 1;
   right: 960px;
+}
+
+.close-control {
+  position: absolute;
+  transform: skew(55deg);
+  opacity: 0;
+}
+
+.close-control.-left {
+  right: 1220px;
+  top: 0;
+}
+
+.close-control.-right {
+  right: 1220px;
+  top: 0;
+}
+
+.full-width .close-control.-left {
+  opacity: 1;
+}
+
+.full-width .close-control.-right {
+  opacity: 1;
 }
