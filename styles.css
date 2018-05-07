@@ -2,3 +2,11 @@
   display: flex;
 }
 
+.left-image-container {
+  overflow: hidden;
+}
+
+.right-image-container {
+  overflow: hidden;
+}
+
