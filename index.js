@@ -46,19 +46,18 @@
       }
     };
 
-    const getStateHandler = (action) => {
+    const setupHandler = (element, action) => {
       const handler = stateTransitions[currentState] && stateTransitions[currentState][action];
-      return handler;
-    };
+      if (!handler) {
+        return;
+      }
 
-    const getCurrentState = () => {
-      return currentState;
+      handler($(element));
     };
 
     return {
-      getStateHandler,
       containerSelector: '.image-container',
-      getCurrentState
+      setupHandler
     }
   }
 
@@ -66,30 +65,15 @@
     const bannerImage = BannerImage();
 
     $(bannerImage.containerSelector).mouseenter(function(e) {
-      const handler = bannerImage.getStateHandler(HOVER);
-      if (!handler) {
-        return;
-      }
-
-      handler($(this));
+      bannerImage.setupHandler(this, HOVER);
     });
 
     $(bannerImage.containerSelector).mouseleave(function(e) {
-      const handler = bannerImage.getStateHandler(UNHOVER);
-      if (!handler) {
-        return;
-      }
-
-      handler($(this));
+      bannerImage.setupHandler(this, UNHOVER);
     });
 
     $(bannerImage.containerSelector).click(function(e) {
-      const handler = bannerImage.getStateHandler(CLICK);
-      if (!handler) {
-        return;
-      }
-
-      handler($(this));
+      bannerImage.setupHandler(this, CLICK);
     });
   }
 
